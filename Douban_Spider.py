@@ -35,7 +35,7 @@ class DoubanSpider():
                    
     def crawl(self):
         print('Processing')
-        file = open('douban.txt','a',encoding='utf-8')
+        file = open('douban.txt','w',encoding='utf-8')
         count = 0
         for i in range(0,250,25):
             time.sleep(random.random())
