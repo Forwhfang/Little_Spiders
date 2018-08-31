@@ -18,7 +18,7 @@ class JdSpider():
         elif self.file_format=='json' :
             self.file = open('Jd.json','w',encoding='utf-8')
         elif self.file_format=='csv' :
-            self.file = open('Jd.csv','w',encoding='utf-8',newline='')#
+            self.file = open('Jd.csv','w',encoding='utf-8',newline='')
             self.writer = csv.writer(self.file)
         print('File Initialized')
 
@@ -91,7 +91,7 @@ class JdSpider():
 
     def turn_page(self):
         try:
-            self.wait.until(EC.presence_of_element_located((By.XPATH,'//a[@class="pn-next" and @onclick]'))).click()#
+            self.wait.until(EC.element_to_be_clickable((By.XPATH,'//a[@class="pn-next"]'))).click()
             self.browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
             time.sleep(3)
         except selenium.common.exceptions.NoSuchElementException:
